@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonago-HDSS Website Concept - Presentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --du-green-primary: #2D5A27;
+            --du-green-secondary: #4A7C3F;
+            --du-green-light: #E9F4E6;
+            --du-gold: #D4AF37;
+            --du-dark: #1A2A1A;
+            --du-light: #F8FBF7;
+            --du-gray: #5A6C5A;
+            --du-white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a2a1a 0%, #2D5A27 100%);
+            color: var(--du-dark);
+            line-height: 1.6;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Presentation Container */
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Slides Container */
+        .slides-container {
+            display: flex;
+            height: 100vh;
+            transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        
+        /* Individual Slide */
+        .slide {
+            min-width: 100vw;
+            height: 100vh;
+            padding: 40px 60px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background: white;
+            overflow-y: auto;
+        }
+        
+        /* SLIDE 1 - COVER */
+        .slide-cover {
+            background: linear-gradient(135deg, var(--du-green-primary) 0%, #1e3a1a 100%);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .slide-cover::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(233, 244, 230, 0.05) 0%, transparent 50%);
+        }
+        
+        .logo-container {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .logo-area {
+            width: 140px;
+            height: 140px;
+            background: var(--du-white);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid var(--du-gold);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            margin: 0 auto 25px;
+            position: relative;
+        }
+        
+        .logo-placeholder {
+            color: var(--du-green-primary);
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.4;
+            padding: 15px;
+        }
+        
+        .logo-text {
+            font-size: 18px;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .cover-title {
+            font-family: 'Source Serif Pro', serif;
+            font-size: 56px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            max-width: 900px;
+        }
+        
+        .cover-subtitle {
+            font-size: 24px;
+            color: var(--du-green-light);
+            margin-bottom: 40px;
+            max-width: 800px;
+        }
+        
+        .project-name {
+            font-size: 42px;
+            color: var(--du-gold);
+            font-weight: 700;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 3px solid rgba(212, 175, 55, 0.4);
+        }
+        
+        .presenter-info {
+            position: absolute;
+            bottom: 40px;
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* CONTENT SLIDES */
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--du-green-primary);
+        }
+        
+        .slide-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 14px;
+            color: var(--du-gray);
+        }
+        
+        .slide-logo-box {
+            width: 32px;
+            height: 32px;
+            background: var(--du-green-primary);
+            border-radius: 6px;
+        }
+        
+        .slide-title {
+            font-family: 'Source Serif Pro', serif;
+            font-size: 42px;
+            color: var(--du-green-primary);
+            font-weight: 700;
+        }
+        
+        .slide-number {
+            font-size: 18px;
+            color: var(--du-gray);
+            font-weight: 500;
+            background: var(--du-green-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+        
+        /* Content Styling */
+        .content-area {
+            flex: 1;
+            padding: 10px 0;
+        }
+        
+        .section-title {
+            font-family: 'Source Serif Pro', serif;
+            font-size: 32px;
+            color: var(--du-green-primary);
+            border-left: 5px solid var(--du-green-secondary);
+            padding-left: 20px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .section-number {
+            background: var(--du-green-primary);
+            color: white;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .info-card {
+            background: var(--du-light);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #dde9da;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-card.green {
+            border-top: 5px solid var(--du-green-primary);
+        }
+        
+        .info-card.gold {
+            border-top: 5px solid var(--du-gold);
+        }
+        
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            color: var(--du-dark);
+            font-weight: 600;
+            font-size: 20px;
+        }
+        
+        .card-title i {
+            color: var(--du-green-primary);
+            font-size: 24px;
+        }
+        
+        /* Website Structure */
+        .structure-visual {
+            background: var(--du-light);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid #dde9da;
+        }
+        
+        .structure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .structure-item {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #e1eadf;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .structure-item:hover {
+            background: var(--du-green-light);
+            transform: scale(1.05);
+        }
+        
+        .structure-item:before {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            height: 6px;
+            background: var(--du-green-secondary);
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .structure-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: var(--du-green-primary);
+            color: white;
+            border-radius: 50%;
+            font-size: 16px;
+            line-height: 32px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        /* Timeline */
+        .timeline-container {
+            background: var(--du-light);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid #dde9da;
+        }
+        
+        .timeline {
+            position: relative;
+            margin: 30px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--du-green-primary);
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .timeline-marker {
+            width: 60px;
+            height: 60px;
+            background: var(--du-white);
+            border: 4px solid var(--du-green-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--du-green-primary);
+            font-weight: bold;
+            margin-right: 25px;
+            position: relative;
+            z-index: 1;
+            flex-shrink: 0;
+            font-size: 20px;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            background: var(--du-white);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #dde9da;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-date {
+            color: var(--du-green-primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .timeline-title {
+            font-weight: 700;
+            color: var(--du-dark);
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+        
+        .timeline-duration {
+            display: inline-block;
+            background: var(--du-green-light);
+            color: var(--du-green-primary);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        
+        .presentation-marker {
+            background: var(--du-gold);
+            color: white;
+            border-color: var(--du-gold);
+        }
+        
+        /* Budget Table */
+        .budget-container {
+            background: var(--du-light);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid #dde9da;
+            overflow-x: auto;
+        }
+        
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+        
+        .budget-table th {
+            background: var(--du-green-primary);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .budget-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #dde9da;
+        }
+        
+        .budget-table tr:nth-child(even) {
+            background: var(--du-light);
+        }
+        
+        .budget-table tr:last-child {
+            background: var(--du-green-light);
+            font-weight: 700;
+            color: var(--du-green-primary);
+            font-size: 18px;
+        }
+        
+        .budget-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #dde9da;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            background: white;
+        }
+        
+        .budget-input:focus {
+            outline: none;
+            border-color: var(--du-green-primary);
+            box-shadow: 0 0 0 3px rgba(45, 90, 39, 0.1);
+        }
+        
+        /* Navigation Controls */
+        .nav-controls {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+        }
+        
+        .nav-btn {
+            width: 60px;
+            height: 60px;
+            background: var(--du-green-primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-btn:hover {
+            background: var(--du-gold);
+            transform: scale(1.1);
+        }
+        
+        .nav-btn:disabled {
+            background: var(--du-gray);
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Slide Indicators */
+        .slide-indicators {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .indicator.active {
+            background: var(--du-gold);
+            border-color: var(--du-gold);
+            transform: scale(1.3);
+        }
+        
+        .indicator:hover {
+            background: var(--du-green-light);
+        }
+        
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 100;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: var(--du-gold);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        /* Animation for slide content */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-in {
+            animation: slideInUp 0.6s ease forwards;
+        }
+        
+        /* Print Button */
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: var(--du-gold);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            z-index: 100;
+            font-size: 16px;
+        }
+        
+        .print-btn:hover {
+            background: #c19a2e;
+            transform: translateY(-3px);
+        }
+        
+        /* Keyboard Shortcuts Hint */
+        .shortcuts-hint {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 12px;
+            z-index: 100;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .shortcuts-hint.show {
+            opacity: 1;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .slide {
+                padding: 30px 40px;
+            }
+            
+            .cover-title {
+                font-size: 48px;
+            }
+            
+            .slide-title {
+                font-size: 36px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .slide {
+                padding: 20px 30px;
+            }
+            
+            .cover-title {
+                font-size: 36px;
+            }
+            
+            .slide-title {
+                font-size: 28px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+    
+    <!-- Presentation Container -->
+    <div class="presentation-container">
+        <div class="slides-container" id="slidesContainer">
+            <!-- SLIDE 1 - COVER -->
+            <div class="slide slide-cover">
+                <div class="logo-container">
+                    <div class="logo-area">
+                        <div class="logo-placeholder">
+                            <img src="DULogo.png" width="90" height="120">
+                        </div>
+                    </div>
+                    <div class="logo-text">
+                        <div style="font-weight: 700; font-size: 22px; color: white;">RESEARCH CENTER</div>
+                        <div style="font-size: 18px;">Health & Demographic Surveillance</div>
+                    </div>
+                </div>
+                
+                <h1 class="cover-title">Website Concept Note</h1>
+                <div class="cover-subtitle">A Modern, Policy-Compliant Digital Platform Proposal</div>
+                
+                <div class="project-name">Wonago-HDSS</div>
+                
+                <div style="margin-top: 50px; max-width: 800px;">
+                    <p style="margin-bottom: 20px; color: rgba(255, 255, 255, 0.9); font-size: 18px; line-height: 1.6;">
+                        
+                    </p>
+                </div>
+                
+                <div class="presenter-info">
+                    <div style="display: flex; justify-content: center; gap: 40px;">
+                        <div>Research Center | Dilla University</div>
+                        <div>November 2023 | Version 2.1</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SLIDE 2 - INTRODUCTION -->
+            <div class="slide">
+                <div class="slide-header">
+                    <div class="slide-logo">
+                        <div class="slide-logo-box">
+                        <div><img src="DULogo.png" width="40" height="50"></div></div>
+                    </div>
+                    <div class="slide-title">Introduction</div>
+                    <div class="slide-number">Slide 2</div>
+                </div>
+                
+                <div class="content-area">
+                    <h2 class="section-title">
+                        <span class="section-number">1</span>
+                        Research in the Digital Age
+                    </h2>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px;">
+                        <div>
+                            <p style="font-size: 20px; line-height: 1.6; margin-bottom: 25px;">
+                                Research centers today are evaluated not only by the quality of their scientific output, but also by how effectively they communicate, preserve, and govern research information digitally.
+                            </p>
+                            
+                            <p style="font-size: 20px; line-height: 1.6; margin-bottom: 25px;">
+                                Leading international research websites function as trusted gateways for knowledge dissemination, collaboration, and controlled data access.
+                            </p>
+                        </div>
+                        
+                        <div style="background: var(--du-green-light); border-radius: 15px; padding: 30px; border-left: 5px solid var(--du-gold); display: flex; align-items: center;">
+                            <div>
+                                <h3 style="color: var(--du-green-primary); margin-bottom: 15px; font-size: 22px;">Our Proposal</h3>
+                                <p style="font-size: 18px; line-height: 1.6; color: var(--du-dark);">
+                                    A modern, policy-compliant, and internationally benchmarked website for the Wonago-HDSS research center under Dilla University. Informed by peer Ethiopian research platforms, international standards, and institutional governance principles.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 40px; display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div style="flex: 1; min-width: 250px; background: var(--du-light); padding: 25px; border-radius: 12px; border-top: 5px solid var(--du-green-primary);">
+                            <h4 style="color: var(--du-green-primary); margin-bottom: 15px; font-size: 18px;">Ethiopian Benchmarks</h4>
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li style="padding: 8px 0; border-bottom: 1px dashed #dde9da;">✓ DRC – University of Gondar</li>
+                                <li style="padding: 8px 0; border-bottom: 1px dashed #dde9da;">✓ Kersa HDSS – Haramaya University</li>
+                                <li style="padding: 8px 0;">✓ Emerging Ethiopian platforms</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="flex: 1; min-width: 250px; background: var(--du-light); padding: 25px; border-radius: 12px; border-top: 5px solid var(--du-gold);">
+                            <h4 style="color: var(--du-green-primary); margin-bottom: 15px; font-size: 18px;">International Standards</h4>
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li style="padding: 8px 0; border-bottom: 1px dashed #dde9da;">✓ Leading research data portals</li>
+                                <li style="padding: 8px 0; border-bottom: 1px dashed #dde9da;">✓ FAIR data principles</li>
+                                <li style="padding: 8px 0;">✓ Global research center websites</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SLIDE 3 - PURPOSE & OBJECTIVES -->
+            <div class="slide">
+                <div class="slide-header">
+                    <div class="slide-logo">
+                        <div class="slide-logo-box">
+                        <div><img src="DULogo.png" width="40" height="50"></div></div>
+                    </div>
+                    <div class="slide-title">Purpose & Objectives</div>
+                    <div class="slide-number">Slide 3</div>
+                </div>
+                
+                <div class="content-area">
+                    <h2 class="section-title">
+                        <span class="section-number">2</span>
+                        Website Purpose & Objectives
+                    </h2>
+                    
+                    <p style="font-size: 20px; margin-bottom: 30px;">The proposed website will serve as the official digital presence of Wonago-HDSS with five core objectives:</p>
+                    
+                    <div class="info-grid">
+                        <div class="info-card green">
+                            <div class="card-title"><i class="fas fa-medal"></i> Establish Credibility</div>
+                            <p style="font-size: 17px;">Present Wonago-HDSS as a credible national and international research institution with proven expertise in health and demographic surveillance.</p>
+                        </div>
+                        <div class="info-card gold">
+                            <div class="card-title"><i class="fas fa-database"></i> Centralize Assets</div>
+                            <p style="font-size: 17px;">Create a structured repository for all research information, publications, datasets, and project outputs with version control and preservation.</p>
+                        </div>
+                        <div class="info-card green">
+                            <div class="card-title"><i class="fas fa-chart-line"></i> Enhance Visibility</div>
+                            <p style="font-size: 17px;">Enable structured discovery of research themes, ongoing projects, publications, and collaborative opportunities through intuitive navigation.</p>
+                        </div>
+                        <div class="info-card gold">
+                            <div class="card-title"><i class="fas fa-shield-alt"></i> Govern Data Access</div>
+                            <p style="font-size: 17px;">Implement policy-driven data sharing with controlled access mechanisms aligned with ethical guidelines and institutional policies.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 40px; background: var(--du-green-light); border-radius: 15px; padding: 30px; text-align: center;">
+                        <h3 style="color: var(--du-green-primary); margin-bottom: 15px; font-size: 24px;">Ultimate Goal</h3>
+                        <p style="font-size: 20px; color: var(--du-dark);">
+                            To strengthen engagement with academia, partners, funders, and the public while ensuring research integrity and data security.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SLIDE 4 - WEBSITE STRUCTURE -->
+            <div class="slide">
+                <div class="slide-header">
+                    <div class="slide-logo">
+                        <div class="slide-logo-box">
+                        <div> <img src="DULogo.png" width="40" height="50"> </div> </div>
+                    </div>
+                    <div class="slide-title">Website Structure</div>
+                    <div class="slide-number">Slide 4</div>
+                </div>
+                
+                <div class="content-area">
+                    <h2 class="section-title">
+                        <span class="section-number">3</span>
+                        Proposed Website Architecture
+                    </h2>
+                    
+                    <p style="font-size: 20px; margin-bottom: 30px;">The Wonago-HDSS website will feature a comprehensive structure designed for both public accessibility and secure internal operations.</p>
+                    
+                    <div class="structure-visual">
+                        <h3 style="color: var(--du-green-primary); margin-bottom: 15px; font-size: 26px;">Public-Facing Sections</h3>
+                        
+                        <div class="structure-grid">
+                            <div class="structure-item">
+                                <div class="structure-number">5.1</div>
+                                <div style="font-weight: 700; color: var(--du-green-primary); font-size: 18px;">Home</div>
+                                <div style="font-size: 14px; color: var(--du-gray); margin-top: 8px;">Center overview & highlights</div>
+                            </div>
+                            <div class="structure-item">
+                                <div class="structure-number">5.2</div>
+                                <div style="font-weight: 700; color: var(--du-green-primary); font-size: 18px;">About</div>
+                                <div style="font-size: 14px; color: var(--du-gray); margin-top: 8px;">Mission, vision & leadership</div>
+                            </div>
+                            <div class="structure-item">
+                                <div class="structure-number">5.3</div>
+                                <div style="font-weight: 700; color: var(--du-green-primary); font-size: 18px;">Research Themes</div>
+                                <div style="font-size: 14px; color: var(--du-gray); margin-top: 8px;">Thematic areas & programs</div>
+                            </div>
+                            <div class="structure-item">
+                                <div class="structure-number">5.4</div>
+                                <div style="font-weight: 700; color: var(--du-green-primary); font-size: 18px;">Projects</div>
+                                <div style="font-size: 14px; color: var(--du-gray); margin-top: 8px;">Detailed project database</div>
+                            </div>
+                            <div class="structure-item">
+                                <div class="structure-number">5.5</div>
+                                <div style="font-weight: 700; color: var(--du-green-primary); font-size: 18px;">Collaboration</div>
+                                <div style="font-size: 14px; color: var(--du-gray); margin-top: 8px;">Partnerships & opportunities</div>
+                            </div>
+                            <div class="structure-item">
+                                <div class="structure-number">5.6</div>
+                                <div style="font-weight: 700; color: var(--du-green-primary); font-size: 18px;">News & Events</div>
+                                <div style="font-size: 14px; color: var(--du-gray); margin-top: 8px;">Activities & announcements</div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 40px; padding-top: 30px; border-top: 2px dashed #dde9da;">
+                            <h3 style="color: var(--du-green-primary); margin-bottom: 20px; font-size: 26px;">Internal Systems (Secure Access)</h3>
+                            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+                                <span style="background: var(--du-green-primary); color: white; padding: 12px 20px; border-radius: 8px; font-size: 16px; font-weight: 600;">Staff Collaboration Portal</span>
+                                <span style="background: var(--du-green-primary); color: white; padding: 12px 20px; border-radius: 8px; font-size: 16px; font-weight: 600;">Secure File Sharing</span>
+                                <span style="background: var(--du-green-primary); color: white; padding: 12px 20px; border-radius: 8px; font-size: 16px; font-weight: 600;">Research Request System</span>
+                                <span style="background: var(--du-green-primary); color: white; padding: 12px 20px; border-radius: 8px; font-size: 16px; font-weight: 600;">Operational Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px; display: flex; justify-content: space-between; align-items: center; background: var(--du-light); padding: 20px; border-radius: 12px;">
+                        <div>
+                            <h4 style="color: var(--du-green-primary); margin-bottom: 8px; font-size: 18px;">Key Features</h4>
+                            <p style="color: var(--du-gray); font-size: 16px;">Role-based access, secure data sharing, research request workflow</p>
+                        </div>
+                        <div style="font-weight: 700; color: var(--du-gold); font-size: 20px;">11 Total Sections</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SLIDE 5 - PROJECT TIMELINE -->
+            <div class="slide">
+                <div class="slide-header">
+                    <div class="slide-logo">
+                        <div class="slide-logo-box">
+                        <div><img src="DULogo.png" width="40" height="50"></div></div>
+                    </div>
+                    <div class="slide-title">Project Timeline</div>
+                    <div class="slide-number">Slide 5</div>
+                </div>
+                
+                <div class="content-area">
+                    <h2 class="section-title">
+                        <span class="section-number">4</span>
+                        Implementation Timeline (12 Weeks)
+                    </h2>
+                    
+                    <p style="font-size: 20px; margin-bottom: 30px;">A structured 2-month + 2-week timeline with key milestones and three progress presentations to stakeholders.</p>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline">
+                            <!-- Week 1-2 -->
+                            <div class="timeline-item">
+                                <div class="timeline-marker">1</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">Week 1-2: Project Initiation</div>
+                                    <div class="timeline-title">Requirements & Planning</div>
+                                    <p>Finalize specifications, assemble team, establish protocols, set up project management tools.</p>
+                                    <div class="timeline-duration">2 weeks</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Week 3-4 -->
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">Week 3-4: Design Phase</div>
+                                    <div class="timeline-title">UI/UX Design & Prototyping</div>
+                                    <p>Create wireframes, design mockups, prototypes, and conduct initial usability testing.</p>
+                                    <div class="timeline-duration">2 weeks</div>
+                                </div>
+                            </div>
+                            
+                            <!-- PRESENTATION 1 -->
+                            <div class="timeline-item">
+                                <div class="timeline-marker presentation-marker">P1</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">End of Week 4</div>
+                                    <div class="timeline-title">Progress Presentation #1</div>
+                                    <p>Present design prototypes, information architecture, and user workflows for stakeholder feedback.</p>
+                                    <div style="background: #FFF8E1; padding: 12px; border-radius: 6px; margin-top: 12px; border-left: 4px solid var(--du-gold);">
+                                        <strong>Focus:</strong> Design approval, UX validation, stakeholder alignment
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Week 5-8 -->
+                            <div class="timeline-item">
+                                <div class="timeline-marker">3</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">Week 5-8: Development</div>
+                                    <div class="timeline-title">Core Development Phase</div>
+                                    <p>Implement front-end and back-end functionality, database, authentication, and core features.</p>
+                                    <div class="timeline-duration">4 weeks</div>
+                                </div>
+                            </div>
+                            
+                            <!-- PRESENTATION 2 -->
+                            <div class="timeline-item">
+                                <div class="timeline-marker presentation-marker">P2</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">End of Week 8</div>
+                                    <div class="timeline-title">Progress Presentation #2</div>
+                                    <p>Demonstrate core functionality, showcase working prototypes, and gather feedback on development progress.</p>
+                                    <div style="background: #FFF8E1; padding: 12px; border-radius: 6px; margin-top: 12px; border-left: 4px solid var(--du-gold);">
+                                        <strong>Focus:</strong> Functionality review, technical validation, mid-course adjustments
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Week 9-12 -->
+                            <div class="timeline-item">
+                                <div class="timeline-marker">4</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">Week 9-12: Testing & Deployment</div>
+                                    <div class="timeline-title">Finalization & Handover</div>
+                                    <p>Comprehensive testing, refinements, staff training, deployment, and documentation.</p>
+                                    <div class="timeline-duration">4 weeks</div>
+                                </div>
+                            </div>
+                            
+                            <!-- PRESENTATION 3 -->
+                            <div class="timeline-item">
+                                <div class="timeline-marker presentation-marker">P3</div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">End of Week 12</div>
+                                    <div class="timeline-title">Final Presentation & Handover</div>
+                                    <p>Formal project handover, demonstration of complete system, review of documentation.</p>
+                                    <div style="background: #FFF8E1; padding: 12px; border-radius: 6px; margin-top: 12px; border-left: 4px solid var(--du-gold);">
+                                        <strong>Focus:</strong> Project completion, system handover, maintenance planning
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 30px; padding: 20px; background: linear-gradient(135deg, var(--du-green-primary), #1e3a1a); border-radius: 12px; color: white;">
+                        <div style="font-size: 22px; font-weight: 700; margin-bottom: 10px;">Total Project Duration: 12 Weeks</div>
+                        <div style="font-size: 18px; opacity: 0.9;">Starting from project approval to full deployment and handover</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SLIDE 6 - PROJECT BUDGET -->
+            <div class="slide">
+                <div class="slide-header">
+                    <div class="slide-logo">
+                        <div class="slide-logo-box">
+                        <div><img src="DULogo.png" width="40" height="50"> </div></div>
+                    </div>
+                    <div class="slide-title">Project Budget</div>
+                    <div class="slide-number">Slide 6</div>
+                </div>
+                
+                <div class="content-area">
+                    <h2 class="section-title">
+                        <span class="section-number">5</span>
+                        Estimated Project Budget
+                    </h2>
+                    
+                    <p style="font-size: 20px; margin-bottom: 30px;">The following budget outlines estimated costs for the Wonago-HDSS website development. All amounts are in Ethiopian Birr (ETB).</p>
+                    
+                    <div class="budget-container">
+                        <table class="budget-table">
+                            <thead>
+                                <tr>
+                                    <th width="45%">Budget Item</th>
+                                    <th width="20%">Quantity/Units</th>
+                                    <th width="20%">Unit Cost (ETB)</th>
+                                    <th width="15%">Total (ETB)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Project Management & Coordination</td>
+                                    <td><input type="text" class="budget-input" value="12 weeks" placeholder="Enter quantity"></td>
+                                    <td><input type="text" class="budget-input" value="0" placeholder="0"></td>
+                                    <td><input type="text" class="budget-input" value="0" placeholder="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>UI/UX Design & Prototyping</td>
+                                    <td><input type="text" class="budget-input" value="4 weeks" placeholder="Enter quantity"></td>
+                                    <td><input type="text" class="budget-input" value="0" placeholder="0"></td>
+                                    <td><input type="text" class="budget-input" value="0" placeholder="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>Front-End Development</td>
+                                    <td><input type="text" class="budget-input" value="6 weeks" placeholder="Enter quantity"></td>
+                                    <td><input type="text" class="budget-input" value="0" placeholder="0"></td>
+                                    <td><input type="text" class="budget-input" value="0" placeholder="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>Back-End Development & Database</td>
+                                    <td><input type="text" class="budget-input" value="8 weeks" placeholder="Enter quantity"></td>
+                                    <td><input type="text" class="budget-input" value="0" placeholder="0"></td>
+                                    <td><input type="text" class="budget-input" value="0" placeholder="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>Security Implementation & Testing</td>
+                                    <td><input type="text" class="budget-input" value="3 weeks" placeholder="Enter quantity"></td>
+                                    <td><input type="text" class="budget-input" value="0" placeholder="0"></td>
+                                    <td><input type="text" class="budget-input" value="0" placeholder="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>Content Migration & Data Entry</td>
+                                    <td><input type="text" class="budget-input" value="2 weeks" placeholder="Enter quantity"></td>
+                                    <td><input type="text" class="budget-input" value="0" placeholder="0"></td>
+                                    <td><input type="text" class="budget-input" value="0" placeholder="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>Staff Training & Documentation</td>
+                                    <td><input type="text" class="budget-input" value="1 week" placeholder="Enter quantity"></td>
+                                    <td><input type="text" class="budget-input" value="0" placeholder="0"></td>
+                                    <td><input type="text" class="budget-input" value="0" placeholder="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>Hosting & Domain (First Year)</td>
+                                    <td><input type="text" class="budget-input" value="1 year" placeholder="Enter quantity"></td>
+                                    <td><input type="text" class="budget-input" value="0" placeholder="0"></td>
+                                    <td><input type="text" class="budget-input" value="0" placeholder="0"></td>
+                                </tr>
+                                <tr>
+                                    <td>Contingency (10% of subtotal)</td>
+                                    <td><input type="text" class="budget-input" value="10%" placeholder="Enter quantity"></td>
+                                    <td><input type="text" class="budget-input" value="N/A" placeholder="N/A"></td>
+                                    <td><input type="text" class="budget-input" value="0" placeholder="0"></td>
+                                </tr>
+                                <tr style="background: var(--du-green-light);">
+                                    <td><strong>TOTAL ESTIMATED BUDGET</strong></td>
+                                    <td colspan="2"></td>
+                                    <td><input type="text" class="budget-input" value="0" placeholder="0" style="font-weight: 700; color: var(--du-green-primary); font-size: 18px;"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div style="margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                        <div style="background: var(--du-light); padding: 25px; border-radius: 12px; border-left: 5px solid var(--du-green-primary);">
+                            <h4 style="color: var(--du-green-primary); margin-bottom: 15px; font-size: 18px;">Budget Notes</h4>
+                            <ul style="padding-left: 20px; color: var(--du-gray);">
+                                <li style="margin-bottom: 10px;">All amounts are estimates and subject to final quotation</li>
+                                <li style="margin-bottom: 10px;">Budget includes 3 progress presentations</li>
+                                <li style="margin-bottom: 10px;">10% contingency included for unforeseen requirements</li>
+                                <li>Ongoing maintenance costs not included</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: var(--du-light); padding: 25px; border-radius: 12px; border-left: 5px solid var(--du-gold); text-align: center; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-size: 18px; color: var(--du-gray); margin-bottom: 10px;">Ready for Budget Planning</div>
+                            <div style="font-size: 24px; font-weight: 700; color: var(--du-green-primary);">Enter Your Budget Figures</div>
+                            <div style="font-size: 16px; color: var(--du-gray); margin-top: 10px;">Click on any field to add your budget estimates</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation Controls -->
+    <div class="nav-controls">
+        <button class="nav-btn" id="prevBtn" disabled>
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="nav-btn" id="nextBtn">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+    
+    <!-- Slide Indicators -->
+    <div class="slide-indicators" id="slideIndicators">
+        <!-- Indicators will be generated by JavaScript -->
+    </div>
+    
+ 
+    
+    <!-- Keyboard Shortcuts Hint -->
+    <div class="shortcuts-hint" id="shortcutsHint">
+        <div>← → : Navigate slides</div>
+        <div>Space : Next slide</div>
+        <div>Esc : Exit fullscreen</div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slidesContainer = document.getElementById('slidesContainer');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const slideIndicators = document.getElementById('slideIndicators');
+            const progressFill = document.getElementById('progressFill');
+            const shortcutsHint = document.getElementById('shortcutsHint');
+            
+            let currentSlide = 0;
+            const totalSlides = document.querySelectorAll('.slide').length;
+            
+            // Create slide indicators
+            for (let i = 0; i < totalSlides; i++) {
+                const indicator = document.createElement('div');
+                indicator.className = 'indicator';
+                if (i === 0) indicator.classList.add('active');
+                indicator.addEventListener('click', () => goToSlide(i));
+                slideIndicators.appendChild(indicator);
+            }
+            
+            // Update navigation state
+            function updateNavigation() {
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === totalSlides - 1;
+                
+                // Update indicators
+                document.querySelectorAll('.indicator').forEach((indicator, index) => {
+                    if (index === currentSlide) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+                
+                // Update progress bar
+                const progressPercentage = ((currentSlide + 1) / totalSlides) * 100;
+                progressFill.style.width = `${progressPercentage}%`;
+                
+                // Update slide numbers
+                document.querySelectorAll('.slide-number').forEach((el, index) => {
+                    el.textContent = `Slide ${index + 1}`;
+                });
+                
+                // Animate content in
+                const currentSlideElement = document.querySelectorAll('.slide')[currentSlide];
+                const contentElements = currentSlideElement.querySelectorAll('.content-area > *');
+                
+                contentElements.forEach((el, index) => {
+                    el.classList.remove('animate-in');
+                    setTimeout(() => {
+                        el.classList.add('animate-in');
+                    }, 100 * index);
+                });
+            }
+            
+            // Go to specific slide
+            function goToSlide(slideIndex) {
+                if (slideIndex < 0 || slideIndex >= totalSlides) return;
+                
+                currentSlide = slideIndex;
+                slidesContainer.style.transform = `translateX(-${currentSlide * 100}vw)`;
+                updateNavigation();
+            }
+            
+            // Next slide
+            function nextSlide() {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    slidesContainer.style.transform = `translateX(-${currentSlide * 100}vw)`;
+                    updateNavigation();
+                }
+            }
+            
+            // Previous slide
+            function prevSlide() {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    slidesContainer.style.transform = `translateX(-${currentSlide * 100}vw)`;
+                    updateNavigation();
+                }
+            }
+            
+            // Event listeners for buttons
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                // Show shortcuts hint
+                shortcutsHint.classList.add('show');
+                setTimeout(() => {
+                    shortcutsHint.classList.remove('show');
+                }, 2000);
+                
+                switch(e.key) {
+                    case 'ArrowRight':
+                    case ' ':
+                        e.preventDefault();
+                        nextSlide();
+                        break;
+                    case 'ArrowLeft':
+                        e.preventDefault();
+                        prevSlide();
+                        break;
+                    case 'Home':
+                        e.preventDefault();
+                        goToSlide(0);
+                        break;
+                    case 'End':
+                        e.preventDefault();
+                        goToSlide(totalSlides - 1);
+                        break;
+                }
+            });
+            
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            document.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+            
+            document.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        // Swipe left - next slide
+                        nextSlide();
+                    } else {
+                        // Swipe right - previous slide
+                        prevSlide();
+                    }
+                }
+            }
+            
+            // Auto-calculate budget totals
+            const budgetInputs = document.querySelectorAll('.budget-input');
+            budgetInputs.forEach(input => {
+                input.addEventListener('input', calculateBudgetTotal);
+            });
+            
+            // Calculate budget total
+            function calculateBudgetTotal() {
+                const totalInputs = document.querySelectorAll('table.budget-table tbody tr td:nth-child(4) input');
+                let total = 0;
+                
+                totalInputs.forEach((input, index) => {
+                    if (index < totalInputs.length - 1) { // Skip the last row (total row)
+                        const value = parseFloat(input.value.replace(/,/g, '')) || 0;
+                        total += value;
+                    }
+                });
+                
+                // Format total with commas
+                const formattedTotal = total.toLocaleString('en-US');
+                document.querySelector('table.budget-table tbody tr:last-child td:last-child input').value = formattedTotal;
+            }
+            
+            // Reset all budget fields to 0
+            function resetBudget() {
+                document.querySelectorAll('.budget-input').forEach(input => {
+                    if (input.placeholder !== 'Enter quantity' && input.placeholder !== 'N/A') {
+                        input.value = '0';
+                    }
+                });
+                calculateBudgetTotal();
+            }
+            
+            // Call resetBudget on load
+            resetBudget();
+            
+            // Initialize
+            updateNavigation();
+            
+            // Print function
+            window.printPresentation = function() {
+                // Create a print-friendly version
+                const printWindow = window.open('', '_blank');
+                printWindow.document.write(`
+                    <html>
+                    <head>
+                        <title>Wonago-HDSS Website Concept - Presentation</title>
+                        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+                        <style>
+                            body { font-family: 'Inter', sans-serif; margin: 0; padding: 20px; }
+                            .slide { page-break-after: always; margin-bottom: 40px; }
+                            h1, h2, h3 { font-family: 'Source Serif Pro', serif; color: #2D5A27; }
+                            table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+                            th { background: #2D5A27; color: white; padding: 12px; }
+                            td { padding: 10px; border-bottom: 1px solid #ddd; }
+                            @media print {
+                                .slide { page-break-after: always; }
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <h1>Wonago-HDSS Website Concept - Presentation Summary</h1>
+                        <p>This document contains all slides from the presentation. Print date: ${new Date().toLocaleDateString()}</p>
+                        <hr>
+                        ${document.querySelector('.presentation-container').innerHTML}
+                    </body>
+                    </html>
+                `);
+                printWindow.document.close();
+                printWindow.focus();
+                setTimeout(() => {
+                    printWindow.print();
+                }, 500);
+            };
+        });
+    </script>
+</body>
+</html>
